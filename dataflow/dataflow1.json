@@ -31,8 +31,10 @@
 				"     input(",
 				"          employees as (employeeId as integer, firstName as string, lastName as string, email as string, department as string, designation as string, salary as integer, currencyCode as string, isActive as boolean)[]",
 				"     ),",
+				"     rowUrlColumn:'EmployeeID',",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> sink1"
+				"     skipDuplicateMapOutputs: true,",
+				"     saveOrder: 1) ~> sink1"
 			]
 		}
 	}
