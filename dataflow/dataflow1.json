@@ -21,7 +21,11 @@
 					"name": "sink1"
 				}
 			],
-			"transformations": [],
+			"transformations": [
+				{
+					"name": "derivedColumn1"
+				}
+			],
 			"scriptLines": [
 				"source(output(",
 				"          EmployeeID as string,",
@@ -38,12 +42,13 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source1",
-				"source1 sink(allowSchemaDrift: true,",
+				"source1 derive(FileName = concat('test/', toString(byName('EmployeeID')), '.json')) ~> derivedColumn1",
+				"derivedColumn1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
 				"          employees as (employeeId as integer, firstName as string, lastName as string, email as string, department as string, designation as string, salary as integer, currencyCode as string, isActive as boolean)[]",
 				"     ),",
-				"     rowUrlColumn:'EmployeeID',",
+				"     rowUrlColumn:'FileName',",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
 				"     saveOrder: 1) ~> sink1"
