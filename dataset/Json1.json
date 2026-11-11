@@ -1,0 +1,57 @@
+{
+	"name": "Json1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "lS_Source",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "dest"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"employees": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"employeeId": {
+								"type": "integer"
+							},
+							"firstName": {
+								"type": "string"
+							},
+							"lastName": {
+								"type": "string"
+							},
+							"email": {
+								"type": "string"
+							},
+							"department": {
+								"type": "string"
+							},
+							"designation": {
+								"type": "string"
+							},
+							"salary": {
+								"type": "integer"
+							},
+							"currencyCode": {
+								"type": "string"
+							},
+							"isActive": {
+								"type": "boolean"
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
