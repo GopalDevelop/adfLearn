@@ -27,6 +27,9 @@
 				}
 			],
 			"scriptLines": [
+				"parameters{",
+				"     runId as string",
+				"}",
 				"source(output(",
 				"          EmployeeID as string,",
 				"          FirstName as string,",
@@ -42,7 +45,7 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source1",
-				"source1 derive(FileName = concat('test/', toString(byName('EmployeeID')), '.json')) ~> derivedColumn1",
+				"source1 derive(FileName = concat($runId, toString(byName('EmployeeID')), '.json')) ~> derivedColumn1",
 				"derivedColumn1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
