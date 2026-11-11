@@ -1,0 +1,23 @@
+{
+	"name": "DSInFile",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "lS_Source",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "employee_data",
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "employee_data.xlsx",
+				"container": "source"
+			},
+			"range": "A6:J1000",
+			"firstRowAsHeader": true
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,15 @@
+{
+	"name": "LearnADFs",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "43e07ae4-1b76-48ba-bcc8-c7d007f13419",
+		"tenantId": "b2d2ed62-bf0c-42d7-8ece-b1d0bf18a104"
+	}
+}
