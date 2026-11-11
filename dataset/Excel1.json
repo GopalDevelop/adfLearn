@@ -8,11 +8,14 @@
 		"annotations": [],
 		"type": "Excel",
 		"typeProperties": {
+			"sheetName": "employee_data",
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"fileName": "employee_data.xlsx",
 				"container": "source"
-			}
+			},
+			"range": "A6:j20",
+			"firstRowAsHeader": true
 		},
 		"schema": []
 	}
